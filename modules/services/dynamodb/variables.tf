@@ -1,2 +1,4 @@
-variable "dynamodb-table-name"{}
+variable "dynamodb-table-name"{
+    
+}
 
