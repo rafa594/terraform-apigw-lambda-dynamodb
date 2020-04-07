@@ -28,11 +28,9 @@ def lambda_handler(event, context):
                 'pais': pais
                 
             },
-            UpdateExpression="set capital = :c",
-            ExpressionAttributeValues={                
-                ':c': capital
-            },
-            ReturnValues="UPDATED_NEW"
+            AttributeUpdates={
+                'capital': capital
+            }
         )
         return "Elemento " + pais + " actualizado correctamente."
     except:

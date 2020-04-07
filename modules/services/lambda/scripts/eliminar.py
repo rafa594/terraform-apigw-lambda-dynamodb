@@ -22,14 +22,13 @@ def lambda_handler(event, context):
     
     pais = event['pais']    
     try:
-        response = dynamodb.delete_item(
-            TableName='${dynamodb-table-name}',
+        response = table.delete_item(            
             Key={
                 "pais": pais
             },
-            ConditionExpression="pais = :val",
+            ConditionExpression="capital = :val",
             ExpressionAttributeValues= {
-                ":val": pais
+                ":val": capital
             }
         )
         return "Elemento " + pais + " eliminado correctamente."
