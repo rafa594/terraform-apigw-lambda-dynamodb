@@ -6,6 +6,14 @@ provider "aws" {
 }
 
 
+module "apigw" {
+  source = "./modules/services/apigw"
+  api_gw_name = "apigw-rafa"
+  crear_arn = "${module.lambda.crear_arn}"
+  region = var.aws_region
+  crear_lambda = var.crear_lambda
+}
+
 module "lambda" {
   source = "./modules/services/lambda"
   aws_region = var.aws_region
