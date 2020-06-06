@@ -1,4 +1,4 @@
-# EKS, Helm deployment
+# Terraform API GW, Lambda & DynamoDB Deployment
 This repository contains the configuration files to deploy a group of AWS Lambda functions (CRUD system) that consume an AWS DynamoDB instance.
 These Lambda Functions are accessed through an AWS API Gateway resource.
 
